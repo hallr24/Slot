@@ -2,28 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/BACK"
+    android:id="@+id/BA"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03A9F4"
+    android:background="#FF0208"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="396dp"
-        android:layout_height="326dp"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="345dp"
+        android:layout_height="663dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="1-Three of a kind =100 points
-                                       2- Two of a kind =50 points
-
-                      3- One of a Kind =10 points"
-        android:textColor="#000000"
-        android:textSize="30sp"
+        android:background="#E9D107"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,10 +14,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Drawable strawberry1;
-    public Drawable pear1;
-    public Drawable cherry1;
-    public Drawable grape1;
+    public Drawable BDSign;
+    public Drawable GDS;
+    public Drawable gold;
+    public Drawable WDS;
     public SeekBar Bar;
     public TextView Points;
     public Button Start;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public Integer picB;
     public Integer picC;
     public boolean on;
+    public int count;
 
 
     @Override
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        strawberry1 = getDrawable(R.drawable.strawberry);
-        pear1 = getDrawable(R.drawable.pear);
-        cherry1 = getDrawable(R.drawable.cherry);
-        grape1 = getDrawable(R.drawable.grape);
+        BDSign = getDrawable(R.drawable.bdsign);
+        GDS = getDrawable(R.drawable.gds);
+        gold = getDrawable(R.drawable.gold);
+        WDS = getDrawable(R.drawable.wds);
 
         SlotA = findViewById(R.id.SlotA);
         SlotB = findViewById(R.id.SlotB);
@@ -86,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
         picC = 1;
 
 
+
+    }
+
+    public void onSaveInstanceState( Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putInt("COUNT", count);
+        bundle.putBoolean("ON", on);
     }
 
     public void startPressed(View v) {
@@ -120,6 +128,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void addPressed(View v) {
+        Intent i = new Intent(this, AddActivity.class);
+        startActivity(i);
+    }
+
+    public void viewPressed(View v) {
+        Intent i = new Intent(this, TitleViewActivity.class);
+        startActivity(i);
+    }
+
+
+
     public void points(){
         if(picA == picB && picB == picC) {
             Points.setText("Points 100");
@@ -134,13 +154,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             if(picA == 1){
-                SlotA.setImageDrawable(cherry1);
+                SlotA.setImageDrawable(BDSign);
             } else if(picA == 2){
-                SlotA.setImageDrawable(grape1);
+                SlotA.setImageDrawable(WDS);
             } else if(picA == 3){
-                SlotA.setImageDrawable(pear1);
+                SlotA.setImageDrawable(GDS);
             } else {
-                SlotA.setImageDrawable(strawberry1);
+                SlotA.setImageDrawable(gold);
             }
             if(picA < 4) {
                 picA++;
@@ -155,13 +175,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             if(picB == 1){
-                SlotB.setImageDrawable(cherry1);
+                SlotB.setImageDrawable(BDSign);
             } else if(picB == 2){
-                SlotB.setImageDrawable(grape1);
+                SlotB.setImageDrawable(WDS);
             } else if(picB == 3){
-                SlotB.setImageDrawable(pear1);
+                SlotB.setImageDrawable(GDS);
             } else {
-                SlotB.setImageDrawable(strawberry1);
+                SlotB.setImageDrawable(gold);
             }
             if(picB < 4) {
                 picB++;
@@ -176,13 +196,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             if(picC == 1){
-                SlotC.setImageDrawable(cherry1);
+                SlotC.setImageDrawable(BDSign);
             } else if(picC == 2){
-                SlotC.setImageDrawable(grape1);
+                SlotC.setImageDrawable(WDS);
             } else if(picC == 3){
-                SlotC.setImageDrawable(pear1);
+                SlotC.setImageDrawable(GDS);
             } else {
-                SlotC.setImageDrawable(strawberry1);
+                SlotC.setImageDrawable(gold);
             }
             if(picC < 4) {
                 picC++;
